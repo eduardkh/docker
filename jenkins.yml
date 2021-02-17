@@ -1,0 +1,10 @@
+version: "3"
+services:
+  jenkins:
+    image: jenkins/jenkins
+    container_name: "jenkins"
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - /home/kali/jenkins:/var/jenkins_home
