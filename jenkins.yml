@@ -7,4 +7,4 @@ services:
       - "8080:8080"
       - "50000:50000"
     volumes:
-      - /home/kali/jenkins:/var/jenkins_home
+      - $HOME/jenkins:/var/jenkins_home
