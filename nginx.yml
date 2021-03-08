@@ -1,0 +1,12 @@
+version: "3.7"
+volumes:
+  xmpl:
+
+services:
+  testnginx:
+    image: nginx:stable-alpine
+    container_name: "nginx-alpine"
+    volumes:
+      - xmpl:/etc/nginx
+    ports:
+      - "8081:80"
