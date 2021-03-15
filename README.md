@@ -8,6 +8,8 @@
 
 `docker build -t eduardkh/go_web_test:001 .`
 
->run the newly built container
+>run the newly built container (multi-stage)
 
-`docker run -d -p 8080:8080 eduardkh/go_web_test:001`
+`docker build --target Builder -t eduardkh/go_web_test_builder:001 .`
+
+`docker build -t eduardkh/go_web_test_final:001 .`
