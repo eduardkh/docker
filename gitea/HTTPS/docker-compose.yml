@@ -4,14 +4,15 @@ services:
   server:
     image: gitea/gitea:1.16
     environment:
-      - USER_UID=1000
-      - USER_GID=1000
+    # https://www.digitalocean.com/community/tutorials/how-to-install-gitea-on-ubuntu-using-docker
+      - USER_UID=112
+      - USER_GID=112
       - USER=git
     volumes:
-      - /home/vagrant/gitea/conf/app.ini:/data/gitea/conf/app.ini
-      - /home/vagrant/gitea/conf/cer.pem:/https/cer.pem
-      - /home/vagrant/gitea/conf/key.pem:/https/key.pem
-      - /home/vagrant/gitea/gitea:/data
+      - /home/vagrant/docker/gitea/HTTPS/conf/app.ini:/data/gitea/conf/app.ini
+      - /home/vagrant/docker/gitea/HTTPS/conf/cer.pem:/https/cer.pem
+      - /home/vagrant/docker/gitea/HTTPS/conf/key.pem:/https/key.pem
+      - /home/vagrant/docker/gitea/HTTPS/gitea:/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
