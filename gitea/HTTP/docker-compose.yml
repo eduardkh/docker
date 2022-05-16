@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  server:
+    image: gitea/gitea:1.16
+    environment:
+      - APP_NAME="Company-Gitea"
+      - USER_UID=1000
+      - USER_GID=1000
+      - USER=git
+      - DISABLE_REGISTRATION=true
+      - ENABLE_OPENID_SIGNUP=false
+      - ENABLE_OPENID_SIGNIN=false
+      - RUN_MODE=prod
+      - DOMAIN=192.168.1.155
+      - SSH_DOMAIN=192.168.1.155
+      - HTTP_PORT=80
+      - ROOT_URL=http://192.168.1.155
+      - SSH_PORT=2222
+      - SSH_LISTEN_PORT=2222
+      - DB_TYPE=sqlite3
+    volumes:
+      - /home/vagrant/gitea/gitea:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "80:80"
+      - "2222:2222"

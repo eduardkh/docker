@@ -1,0 +1,19 @@
+version: "3.9"
+
+services:
+  server:
+    image: gitea/gitea:1.16
+    environment:
+      - USER_UID=1000
+      - USER_GID=1000
+      - USER=git
+    volumes:
+      - /home/vagrant/gitea/conf/app.ini:/data/gitea/conf/app.ini
+      - /home/vagrant/gitea/conf/cer.pem:/https/cer.pem
+      - /home/vagrant/gitea/conf/key.pem:/https/key.pem
+      - /home/vagrant/gitea/gitea:/data
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "443:443"
+      - "2222:2222"
