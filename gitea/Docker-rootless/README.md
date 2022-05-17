@@ -9,7 +9,7 @@ sudo adduser --system --shell /bin/bash --gecos 'Git Version Control' --group --
 > SSH Container Passthrough
 
 ```bash
-cat << EOF > /usr/local/bin/gitea-shell
+sudo tee -a /usr/local/bin/gitea-shell >/dev/null <<'EOF'
 #!/bin/sh
 /usr/bin/docker exec -i --env SSH_ORIGINAL_COMMAND="$SSH_ORIGINAL_COMMAND" gitea sh "$@"
 EOF
@@ -21,7 +21,7 @@ sudo usermod -s /usr/local/bin/gitea-shell git
 > SSH authentication on the host
 
 ```bash
-cat << EOF > /etc/ssh/sshd_config
+sudo tee -a /etc/ssh/sshd_config >/dev/null <<'EOF'
 Match User git
   AuthorizedKeysCommandUser git
   AuthorizedKeysCommand /usr/bin/docker exec -i gitea /usr/local/bin/gitea keys -c /etc/gitea/app.ini -e git -u %u -t %t -k %k
