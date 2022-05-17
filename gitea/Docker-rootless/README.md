@@ -40,5 +40,5 @@ docker stack deploy -c docker-compose.yml gitea
 
 > windows ssh problem fix (ssh config file)
 
-[issues 18528]([https://](https://github.com/go-gitea/gitea/issues/18528))
-[issues 17798]([https://](https://github.com/go-gitea/gitea/issues/17798))
+[issues 18528](https://github.com/go-gitea/gitea/issues/18528)
+[issues 17798](https://github.com/go-gitea/gitea/issues/17798)
