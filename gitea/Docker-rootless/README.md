@@ -34,9 +34,8 @@ sudo systemctl status sshd
 > deploy docker stack as git
 
 ```bash
-sudo chown -R git:git *
-sudo usermod -aG docker git
-sudo -u git docker stack deploy -c docker-compose.yml gitea
+docker swarm init --advertise-addr eth1
+docker stack deploy -c docker-compose.yml gitea
 ```
 
 > windows ssh problem fix (ssh config file)
