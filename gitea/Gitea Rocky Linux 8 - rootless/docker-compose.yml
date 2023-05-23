@@ -16,6 +16,14 @@ services:
       - GITEA__database__NAME=gitea
       - GITEA__database__USER=gitea
       - GITEA__database__PASSWD=gitea
+      - HTTP_PORT=3000
+      - ROOT_URL=https://192.168.1.154
+      - RUN_MODE=prod
+      - SSH_PORT=2221
+        # NOT Sure
+      - SSH_DOMAIN=192.168.1.154
+      - DISABLE_SSH=false
+      - START_SSH_SERVER=true
     restart: always
     networks:
       - gitea
@@ -25,7 +33,7 @@ services:
       - /etc/localtime:/etc/localtime:ro
     ports:
       - "3000:3000"
-      - "2222:22"
+      - "2221:22"
     depends_on:
       - db
 
