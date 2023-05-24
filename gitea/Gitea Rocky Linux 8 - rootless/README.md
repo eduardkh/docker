@@ -27,7 +27,7 @@ sudo firewall-cmd --permanent --list-services
 
 sudo firewall-cmd --permanent --add-service=http
 sudo firewall-cmd --permanent --add-service=https
-sudo firewall-cmd --permanent --add-port=2221/tcp
+sudo firewall-cmd --permanent --add-port=2222/tcp
 
 sudo firewall-cmd --permanent --list-all
 sudo firewall-cmd --reload
