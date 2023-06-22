@@ -21,3 +21,13 @@ docker build --target Builder -t eduardkh/go_web_test_builder:001 .
 ```bash
 docker build -t eduardkh/go_web_test_final:001 .
 ```
+
+> Scan Docker Files with Hadolint
+
+```bash
+# Install hadolint
+sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64 sudo chmod +x /bin/hadolint
+
+# Run hadolint
+hadolint Dockerfile
+```
