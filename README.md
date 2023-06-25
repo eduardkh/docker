@@ -26,7 +26,7 @@ docker build -t eduardkh/go_web_test_final:001 .
 
 ```bash
 # Install hadolint
-sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64 sudo chmod +x /bin/hadolint
+sudo wget -O /bin/hadolint https://github.com/hadolint/hadolint/releases/download/v2.12.0/hadolint-Linux-x86_64 && sudo chmod +x /bin/hadolint
 
 # Run hadolint
 hadolint Dockerfile
