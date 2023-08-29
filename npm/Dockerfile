@@ -6,8 +6,7 @@ WORKDIR /usr/src/app
 
 # Copy package.json and install dependencies
 COPY package.json ./
-RUN npm install --omit=dev
-RUN npm ci --only=production
+RUN npm install --omit=dev && npm ci --only=production
 
 # Copy the current directory contents into the container
 COPY . .
