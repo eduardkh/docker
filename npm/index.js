@@ -12,10 +12,10 @@ app.get('/', (req, res) => {
     .map((iface) => iface.address);
 
   res.json({
-    'Data': {
-      'Hostname': hostname,
-      'Timestamp': timestamp,
-      'IP Addresses': ips
+    'data': {
+      'hostname': hostname,
+      'timestamp': timestamp,
+      'ip_addresses': ips
     },
   });
 
