@@ -1,0 +1,3 @@
+module hellogoapp
+
+go 1.21.0
