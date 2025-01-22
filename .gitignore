@@ -2,3 +2,4 @@ config/*/
 data/*/
 node_modules/
 venv/
+alpine-minirootfs-3.21.2-x86.tar.gz
